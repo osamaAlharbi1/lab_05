@@ -1,0 +1,16 @@
+{% load static%}
+<html>
+<head>
+    <title>People List</title>
+    <link rel="stylesheet" href="{% static 'lab5app/style.css' %}">
+</head>
+<body>
+    <h1>People List</h1>
+    <ul>
+        {% for person in people %}
+        <li>{{ person }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add' %}">Add Person</a>
+</body>
+</html>
