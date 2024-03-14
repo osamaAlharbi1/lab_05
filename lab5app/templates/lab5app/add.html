@@ -5,15 +5,14 @@
     <link rel="stylesheet" href="{% static 'lab5app/addStyle.css' %}">
 </head>
 <body>
-    <h1>Add Person</h1>
-    <form method="post">
-        {% csrf_token %}
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username"><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password"><br>
-        <input type="submit" value="Submit">
-    </form>
-    <a href="{% url 'default' %}">View People</a>
-</body>
+    <div class="container">
+        <h1>Add New Person</h1>
+        <form action="{% url 'add' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button type="submit">Submit</button>
+        </form>
+        <a href="{% url 'default' %}">View All People</a>
+    </div>
 </html>
